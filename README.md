@@ -6,8 +6,9 @@
 GenesisWallet is an open source community made wallet for Bitcoin II (BC2) - Bitcoin's sister chain. 
 Built with React Native and Electrum, forked from BlueWallet. GenesisWallet is open source project and is not associated with the BitcoinII Organization.
 
+**GenesisWallet:** [genesiswallet.org](https://genesiswallet.org)
 
-**Website:** [bitcoin-ii.org](https://bitcoin-ii.org)
+**BC2 Website:** [bitcoin-ii.org](https://bitcoin-ii.org)
 
 **Explorer:** [bc2explorer.com](https://bc2explorer.com)
 
