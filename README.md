@@ -1,4 +1,9 @@
 # Genesis Wallet - A Bitcoin II (BC2) Wallet
+EARLY ACCESS SOFTWARE
+Please BACK UP YOUR KEYS 
+
+Genesiswallet is still in development. Currenly only USD will show the correct price for BC2, any other currency selected will show BTC's price. This is expected and will be updated in the future
+Some known minor UI tweaks need to be made like the spinning loading icon as well as the sat2s/vbytes button is also blue
 
 - [Version] 7.2.3 (https://github.com/GenesisWalletOrg)
 
