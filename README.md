@@ -1,10 +1,8 @@
-
 <p align="center">
   <a href="https://github.com/GenesisWalletOrg/GenesisWallet/releases">
-    <img src="https://img.shields.io/github/downloads/GenesisWalletOrg/GenesisWallet/total?style=for-the-badge" alt="Downloads">
+    <img src="https://img.shields.io/github/downloads/GenesisWalletOrg/GenesisWallet/total?style=for-the-badge&cacheSeconds=300" alt="Downloads">
   </a>
 </p>
-
 # Genesis Wallet — BitcoinII (BC2)
 
 > ⚠️ **EARLY ACCESS SOFTWARE** — Please **back up your keys** before use. This software is still in active development.
