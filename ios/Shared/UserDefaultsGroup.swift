@@ -1,0 +1,68 @@
+//
+//  UserDefaultsGroup.swift
+//  MarketWidgetExtension
+//
+//  Created by Marcos Rodriguez on 10/31/20.
+//  Copyright © 2020 BlueWallet. All rights reserved.
+//
+
+import Foundation
+
+struct UserDefaultsElectrumSettings {
+    var host: String?
+    var port: UInt16?
+    var sslPort: UInt16?
+}
+
+let hardcodedPeers = DefaultElectrumPeers.map { settings in
+    (
+        host: settings.host ?? "", 
+        port: settings.sslPort ?? settings.port ?? 50001, 
+        useSSL: settings.sslPort != nil
+    )
+}
+
+let DefaultElectrumPeers = [
+    UserDefaultsElectrumSettings(host: "infra1.bitcoin-ii.org", port: 50008, sslPort: 50009),
+    UserDefaultsElectrumSettings(host: "explorer.bitcoin-ii.org", port: 50008, sslPort: nil),
+]
+
+class UserDefaultsGroup {
+    static private let suite = UserDefaults(suiteName: UserDefaultsGroupKey.GroupName.rawValue)
+
+    static func getElectrumSettings() -> UserDefaultsElectrumSettings {
+        guard let electrumSettingsHost = suite?.string(forKey: UserDefaultsGroupKey.ElectrumSettingsHost.rawValue) else {
+            return DefaultElectrumPeers.randomElement() ?? UserDefaultsElectrumSettings()
+        }
+
+        let electrumSettingsTCPPort = suite?.integer(forKey: UserDefaultsGroupKey.ElectrumSettingsTCPPort.rawValue) ?? 50008
+        let electrumSettingsSSLPort = suite?.integer(forKey: UserDefaultsGroupKey.ElectrumSettingsSSLPort.rawValue) ?? 50009
+
+        let host = electrumSettingsHost
+        let sslPort = UInt16(electrumSettingsSSLPort)
+        let port = UInt16(electrumSettingsTCPPort)
+
+        return UserDefaultsElectrumSettings(host: host, port: port, sslPort: sslPort)
+    }
+
+    static func getAllWalletsBalance() -> Double {
+        guard let allWalletsBalance = suite?.string(forKey: UserDefaultsGroupKey.AllWalletsBalance.rawValue) else {
+            return 0
+        }
+
+        return Double(allWalletsBalance) ?? 0
+    }
+
+    // Int: EPOCH value, Bool: Latest transaction is unconfirmed
+    static func getAllWalletsLatestTransactionTime() -> LatestTransaction {
+        guard let allWalletsTransactionTime = suite?.string(forKey: UserDefaultsGroupKey.AllWalletsLatestTransactionTime.rawValue) else {
+            return LatestTransaction(isUnconfirmed: false, epochValue: 0)
+        }
+
+        if allWalletsTransactionTime == UserDefaultsGroupKey.LatestTransactionIsUnconfirmed.rawValue {
+            return LatestTransaction(isUnconfirmed: true, epochValue: 0)
+        } else {
+            return LatestTransaction(isUnconfirmed: false, epochValue: Int(allWalletsTransactionTime) ?? 0)
+        }
+    }
+}
