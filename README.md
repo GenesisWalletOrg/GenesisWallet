@@ -1,5 +1,9 @@
 
-
+<p align="center">
+  <a href="https://github.com/GenesisWalletOrg/GenesisWallet/releases">
+    <img src="https://img.shields.io/github/downloads/GenesisWalletOrg/GenesisWallet/total?style=for-the-badge" alt="Downloads">
+  </a>
+</p>
 
 # Genesis Wallet — BitcoinII (BC2)
 
