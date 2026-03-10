@@ -1,3 +1,22 @@
+<p align="center">
+  <a href="https://github.com/GenesisWalletOrg/GenesisWallet/releases">
+    <img src="https://img.shields.io/github/downloads/GenesisWalletOrg/GenesisWallet/total?style=for-the-badge" alt="Downloads">
+  </a>
+  <a href="https://Bitcoin-II.org">
+    <img src="https://img.shields.io/badge/Website-Online-brightgreen?logo=google-chrome&style=for-the-badge" alt="Website">
+  </a>
+  <a href="https://t.me/+mc19GB_d5yo3Yjg5">
+    <img src="https://img.shields.io/badge/Telegram-Join%20Chat-blue?logo=telegram&style=for-the-badge" alt="Telegram">
+  </a>
+  <a href="https://reddit.com/r/BitcoinII">
+    <img src="https://img.shields.io/reddit/subreddit-subscribers/BitcoinII?label=Reddit&style=for-the-badge" alt="Reddit">
+  </a>
+  <a href="https://x.com/@TheBitcoinIIOrg">
+    <img src="https://img.shields.io/badge/X-Follow-black?logo=twitter&style=for-the-badge" alt="X">
+  </a>
+</p>
+
+
 # Genesis Wallet — BitcoinII (BC2)
 
 > ⚠️ **EARLY ACCESS SOFTWARE** — Please **back up your keys** before use. This software is still in active development.
